@@ -1,36 +1,36 @@
-# Runing a sinatra application on Docker
+# Runing an R microserver application on Docker
 
-This is sample project for running a sinatra application on Docker.
+This is sample project for running a [microserver](https://github.com/robertzk/microserver) application on Docker.
 
 ## Usage
 
 Create Image
 
 ```
-docker build -t sinatra .
+docker build -t microserver .
 ```
 
 Run it !
 
 ```
-ID=$(docker run -p 4567:4567 -d sinatra)
+ID=$(docker run -p 4567:4567 -d microserver)
 ```
 
-You can access it from your browser, [http://localhost:4567/](http://localhost:4567/).
+You can access it from your browser, [http://localhost:4567/ping](http://localhost:4567/).
 
-Check logs. 
+Check logs.
 
 ```
 docker logs $ID
 ```
 
-Stop it. 
+Stop it.
 
 ```
 docker stop $ID
 ```
 
-Delete it. 
+Delete it.
 
 ```
 docker rm $ID
@@ -49,10 +49,3 @@ and
 ```
 vagrant ssh
 ```
-
-## Reference
-
-- [OSX, Vagrant, Docker, and Sinatra | DYLI.SH](http://dyli.sh/2013/08/23/OSX-Vagrant-Docker-Sinatra.html)
-- [Sinatra deployment with Docker](http://haanto.com/sinatra-deployment-with-docker/)
-
-
