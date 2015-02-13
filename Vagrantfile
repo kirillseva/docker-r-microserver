@@ -5,9 +5,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "ubuntu/trusty64"
   config.vm.network :forwarded_port, guest: 3464, host: 3464
-  config.vm.provision :docker do |d|
-    d.pull_images "rocker/r-base"
+  config.vm.provider :docker do |d|
+    d.build_dir = "."
   end
 end
