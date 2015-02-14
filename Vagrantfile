@@ -8,5 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 3464, host: 3464
   config.vm.provider :docker do |d|
     d.build_dir = "."
+    d.ports = ["3464:3464"]
   end
 end
