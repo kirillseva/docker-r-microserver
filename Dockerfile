@@ -15,4 +15,4 @@ RUN \
 
 EXPOSE 3464
 
-ENTRYPOINT ["./server.R"]
+ENTRYPOINT ["./minimal-microserver/server.R"]
